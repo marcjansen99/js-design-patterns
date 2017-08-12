@@ -15,9 +15,12 @@ Object.defineProperty(task, "toString", {
     value: function() {
         return this.title + ' ' + this.description;
     },
-    writable: true,
-    enumerable: true,
-    configurable: true
+    writable: false,
+    enumerable: false,
+    configurable: false
 });
 
+task.toString = 'hi';
+
+console.log(task);
 console.log(task.toString());
