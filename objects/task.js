@@ -20,7 +20,15 @@ Object.defineProperty(task, "toString", {
     configurable: false
 });
 
-task.toString = 'hi';
+var urgentTask = Object.create(task);
+Object.defineProperty(urgentTask, "toString", {
+    value: function() {
+        return this.title + ' is urgent!';
+    },
+    writable: false,
+    enumerable: false,
+    configurable: false
+});
 
 console.log(task);
-console.log(task.toString());
+console.log(urgentTask.toString());
